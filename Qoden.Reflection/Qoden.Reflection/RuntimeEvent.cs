@@ -1,5 +1,6 @@
 using System;
 using System.Reflection;
+#pragma warning disable CS1701 // Assuming assembly reference matches identity
 
 namespace Qoden.Reflection
 {

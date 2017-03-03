@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Collections;
+#pragma warning disable CS1701 // Assuming assembly reference matches identity
 
 namespace Qoden.Reflection
 {
@@ -50,7 +51,7 @@ namespace Qoden.Reflection
 			get { return data; }
 			set { 
 				if (ReferenceEquals (value, null)) {
-					throw new ArgumentNullException ("value");
+					throw new ArgumentNullException (nameof(value));
 				}
 				data = value;
 			}
@@ -117,7 +118,7 @@ namespace Qoden.Reflection
 				return false;
 			}
 			var value = this [item.Key];
-			return object.Equals (item.Value, value);
+			return Equals(item.Value, value);
 		}
 
 		public void CopyTo (KeyValuePair<string, object>[] array, int arrayIndex)
@@ -129,7 +130,7 @@ namespace Qoden.Reflection
 		{
 			if (kvc.ContainsKey (data, item.Key)) {
 				var value = kvc.Get (data, item.Key);
-				if (object.Equals (value, item.Value)) {
+				if (Equals(value, item.Value)) {
 					kvc.Remove (data, item.Key);
 					return true;
 				}

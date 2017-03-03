@@ -1,11 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Qoden.Reflection/Qoden.Reflection/PropertySupport.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Qoden.Reflection/Qoden.Reflection/TypeMap.cs">
     <Files>
       <File FileName="Qoden.Reflection/Qoden.Reflection.csproj" Line="1" Column="1" />
       <File FileName="Qoden.Reflection/project.json" Line="1" Column="1" />
-      <File FileName="Qoden.Reflection/Qoden.Reflection/Record.cs" Line="14" Column="18" />
       <File FileName="Qoden.Reflection/Qoden.Reflection/EventSubscription.cs" Line="1" Column="1" />
-      <File FileName="Qoden.Reflection/Qoden.Reflection/PropertySupport.cs" Line="1" Column="1" />
+      <File FileName="Qoden.Reflection/Qoden.Reflection/PropertySupport.cs" Line="53" Column="111" />
+      <File FileName="Qoden.Reflection/Qoden.Reflection/KeyValueCoding.cs" Line="5" Column="31" />
+      <File FileName="Qoden.Reflection/Qoden.Reflection/RuntimeEvent.cs" Line="4" Column="1" />
+      <File FileName="Qoden.Reflection/Qoden.Reflection/TypeMap.cs" Line="9" Column="70" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

@@ -22,6 +22,7 @@
 		<DefineConstants>DEBUG;__NET_CORE__</DefineConstants>
 		<ErrorReport>prompt</ErrorReport>
 		<WarningLevel>4</WarningLevel>
+		<NoWarn>CS1701</NoWarn>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
 		<Optimize>true</Optimize>
@@ -29,6 +30,7 @@
 		<DefineConstants>__NET_CORE__</DefineConstants>
 		<ErrorReport>prompt</ErrorReport>
 		<WarningLevel>4</WarningLevel>
+		<NoWarn>CS1701</NoWarn>
 	</PropertyGroup>
 	<ItemGroup>		
 		<Compile Include="Properties\AssemblyInfo.cs" />

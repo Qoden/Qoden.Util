@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Collections;
-using System.Collections.Concurrent;
+#pragma warning disable CS1701 // Assuming assembly reference matches identity
 
 namespace Qoden.Reflection
 {
