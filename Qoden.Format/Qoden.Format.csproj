@@ -13,7 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Qoden.Reflection" Version="1.0.0-*" />
+    <PackageReference Include="Qoden.Reflection" Version="1.0.0-b*" />
   </ItemGroup>
 
 </Project>
