@@ -1,55 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<PropertyGroup>
-		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-		<ProjectGuid>{57C412C4-BFB9-4AA1-B22E-27E4947D2BB0}</ProjectGuid>
-		<ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-		<OutputType>Library</OutputType>
-		<RootNamespace>Qoden.Reflection</RootNamespace>
-		<AssemblyName>Qoden.Reflection</AssemblyName>
-		<TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
-		<PackageId>Qoden.Reflection</PackageId>
-		<PackageVersion>1.0.0</PackageVersion>
-		<Authors>averbin</Authors>
-		<Description>Qoden Reflection utilities</Description>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-		<DebugSymbols>true</DebugSymbols>
-		<DebugType>full</DebugType>
-		<Optimize>false</Optimize>
-		<OutputPath>bin\Debug</OutputPath>
-		<DefineConstants>DEBUG;__NET_CORE__</DefineConstants>
-		<ErrorReport>prompt</ErrorReport>
-		<WarningLevel>4</WarningLevel>
-		<NoWarn>CS1701</NoWarn>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-		<Optimize>true</Optimize>
-		<OutputPath>bin\Release</OutputPath>
-		<DefineConstants>__NET_CORE__</DefineConstants>
-		<ErrorReport>prompt</ErrorReport>
-		<WarningLevel>4</WarningLevel>
-		<NoWarn>CS1701</NoWarn>
-	</PropertyGroup>
-	<ItemGroup>
-		<Compile Include="Properties\AssemblyInfo.cs" />
-		<Compile Include="src\DontCallDuringValidationAttribute.cs" />
-		<Compile Include="src\EventSubscription.cs" />
-		<Compile Include="src\Inspection.cs" />
-		<Compile Include="src\KeyValueCoding.cs" />
-		<Compile Include="src\PropertySupport.cs" />
-		<Compile Include="src\Record.cs" />
-		<Compile Include="src\RuntimeEvent.cs" />
-		<Compile Include="src\TypeMap.cs" />
-	</ItemGroup>
-	<ItemGroup>
-		<None Include="Qoden.Reflection.csproj" />
-		<None Include="project.json" />
-	</ItemGroup>
-	<ItemGroup>
-		<Reference Include="System.Runtime" />
-		<Reference Include="System.Reflection" />
-	</ItemGroup>
-	<Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <DefineConstants>$(DefineConstants);__NET_CORE__</DefineConstants>
+    <AssemblyName>Qoden.Reflection</AssemblyName>
+    <PackageId>Qoden.Reflection</PackageId>
+    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+    <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81</PackageTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Reflection" Version="4.3.0" />
+    <PackageReference Include="System.Reflection.TypeExtensions" Version="4.3.0" />
+  </ItemGroup>
+
 </Project>

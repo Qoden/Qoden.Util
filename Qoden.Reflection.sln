@@ -1,9 +1,9 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26114.2
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Qoden.Reflection", "Qoden.Reflection\Qoden.Reflection.xproj", "{472331D2-7A01-446B-B50A-95C8F1AB2A2E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qoden.Reflection", "Qoden.Reflection\Qoden.Reflection.csproj", "{472331D2-7A01-446B-B50A-95C8F1AB2A2E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qoden.Reflection", "Qoden.Reflection\Qoden.Reflection.csproj", "{57C412C4-BFB9-4AA1-B22E-27E4947D2BB0}"
 EndProject
