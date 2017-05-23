@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>netstandard1.6</TargetFramework>
+		<PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81</PackageTargetFallback>
+	</PropertyGroup>
+	<ItemGroup>
+		<Folder Include="src\" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Qoden.Validation" Version="1.0.0-b*" />
+		<PackageReference Include="Xam.Plugin.DeviceInfo" Version="2.1.2" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Qoden.Util.csproj" />
+	</ItemGroup>
+</Project>
