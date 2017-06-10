@@ -15,7 +15,7 @@ namespace Qoden.Util
             var deviceInfo = DeviceInfo.Current;
             var assemblyName = new AssemblyName($"{prefix}.{deviceInfo.Platform}");
             var assembly = Assembly.Load(assemblyName);
-            var t = assembly.GetType($"{prefix}.{deviceInfo.Platform}.{name}", true);
+            var t = assembly.GetType($"{prefix}.{deviceInfo.Platform}.{name}", true, true);
             return (T)Activator.CreateInstance(t);
         }
     }

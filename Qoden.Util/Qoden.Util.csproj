@@ -1,14 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>netstandard1.6</TargetFramework>
+		<TargetFramework>netstandard1.4</TargetFramework>
 		<PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81</PackageTargetFallback>
+		<PackOnBuild>true</PackOnBuild>
+		<PackageId>Qoden.Util</PackageId>
+		<PackageVersion>1.0.2</PackageVersion>
+		<Authors>Qoden Technologies</Authors>
+		<Description>Small utilities which does not fit into any other Qoden packages</Description>
 	</PropertyGroup>
 	<ItemGroup>
 		<Folder Include="src\" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Qoden.Validation" Version="1.0.0-b*" />
+		<PackageReference Include="Qoden.Validation" Version="1.0.1" />
 		<PackageReference Include="Xam.Plugin.DeviceInfo" Version="2.1.2" />
 	</ItemGroup>
 	<ItemGroup>

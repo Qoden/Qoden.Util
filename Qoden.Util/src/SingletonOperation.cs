@@ -5,11 +5,11 @@ using Qoden.Validation;
 namespace Qoden.Util
 {
     /// <summary>
-    /// <see cref="T:Qoden.Auth.SingletonOperation`1"/> is async operation which can
+    /// <see cref="T:Qoden.Util.SingletonOperation`1"/> is async operation which can
     /// be run one at a time, like login operation.
     /// </summary>
     /// <remarks>
-    /// <see cref="T:Qoden.Auth.SingletonOperation`1"/> can be started from multiple threads.
+    /// <see cref="T:Qoden.Util.SingletonOperation`1"/> can be started from multiple threads.
     /// Only first caller starts real operation while others get already started operation as a result. 
     /// 
     /// Once operation finished it can be repeated.
@@ -42,17 +42,24 @@ namespace Qoden.Util
                 {
                     if (task == null)
                     {
-                        task = operation()
-                            .ContinueWith(t =>
-                            {
-                                task = null;
-                                return t.Result;
-                            });
+                        task = DoStart();
                     }
                 }
             }
 
             return task;
+        }
+
+        private async Task<T> DoStart()
+        {
+            try
+            {
+                return await operation();
+            }
+            finally 
+            {
+                task = null;   
+            }
         }
 
         /// <summary>
