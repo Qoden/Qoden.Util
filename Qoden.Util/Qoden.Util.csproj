@@ -5,7 +5,7 @@
 		<PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81</PackageTargetFallback>
 		<PackOnBuild>true</PackOnBuild>
 		<PackageId>Qoden.Util</PackageId>
-		<PackageVersion>1.0.2</PackageVersion>
+		<PackageVersion>1.0.4</PackageVersion>
 		<Authors>Qoden Technologies</Authors>
 		<Description>Small utilities which does not fit into any other Qoden packages</Description>
 	</PropertyGroup>
@@ -13,7 +13,7 @@
 		<Folder Include="src\" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Qoden.Validation" Version="1.0.1" />
+		<PackageReference Include="Qoden.Validation" Version="1.0.2" />
 		<PackageReference Include="Xam.Plugin.DeviceInfo" Version="2.1.2" />
 	</ItemGroup>
 	<ItemGroup>
