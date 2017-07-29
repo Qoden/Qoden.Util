@@ -3,7 +3,6 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard1.4</TargetFramework>
 		<PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81</PackageTargetFallback>
-		<PackOnBuild>true</PackOnBuild>
 		<PackageId>Qoden.Util</PackageId>
 		<PackageVersion>1.0.4</PackageVersion>
 		<Authors>Qoden Technologies</Authors>
