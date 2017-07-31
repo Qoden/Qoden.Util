@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;
 using Qoden.Validation;
 
@@ -42,24 +43,17 @@ namespace Qoden.Util
                 {
                     if (task == null)
                     {
-                        task = DoStart();
+                        task = operation().ContinueWith((t)=>{
+                            task = null;
+                            if (t.Exception != null)
+                                ExceptionDispatchInfo.Capture(t.Exception.InnerException).Throw();
+                            return t.Result;
+                        });
                     }
                 }
             }
 
             return task;
-        }
-
-        private async Task<T> DoStart()
-        {
-            try
-            {
-                return await operation();
-            }
-            finally 
-            {
-                task = null;   
-            }
         }
 
         /// <summary>
