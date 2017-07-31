@@ -12,10 +12,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Qoden.Reflection" Version="1.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="Qoden.Format.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Qoden.Reflection\Qoden.Reflection\Qoden.Reflection.csproj" />
   </ItemGroup>
 </Project>
