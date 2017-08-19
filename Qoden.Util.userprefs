@@ -1,11 +1,7 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Qoden.Util/Reflection/KeyValueCoding.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Qoden.Util/Qoden.Util.csproj">
     <Files>
-      <File FileName="Qoden.Util/Util/DefaultValue.cs" Line="2" Column="1" />
-      <File FileName="Qoden.Util/Util/Plugin.cs" Line="5" Column="37" />
-      <File FileName="Qoden.Util/Util/SingletonOperation.cs" Line="29" Column="53" />
-      <File FileName="Qoden.Util/Reflection/KeyValueCoding.cs" Line="67" Column="35" />
-      <File FileName="Qoden.Util/Reflection/Record.cs" Line="19" Column="57" />
+      <File FileName="Qoden.Util/Qoden.Util.csproj" Line="13" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

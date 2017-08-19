@@ -1,12 +1,11 @@
 ﻿using System.Text;
 using System;
-using Qoden.Reflection;
 
 namespace Qoden.Util
 {
 	public static class QodenFormat
 	{
-	    private struct FormatParser
+	    struct FormatParser
 		{
 			int _idx;
 		    readonly StringBuilder _result;
