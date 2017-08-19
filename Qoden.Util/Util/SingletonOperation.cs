@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;
-using Qoden.Validation;
 
 namespace Qoden.Util
 {
@@ -27,8 +26,7 @@ namespace Qoden.Util
         /// <param name="operation">Operation to perform</param>
         public SingletonOperation(Func<Task<T>> operation)
         {
-            Assert.Argument(operation, nameof(operation)).NotNull();
-            this.operation = operation;
+            this.operation = operation ?? throw new ArgumentNullException(nameof(operation));
         }
 
         /// <summary>

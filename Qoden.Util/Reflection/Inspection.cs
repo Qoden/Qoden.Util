@@ -1,9 +1,9 @@
-using System;
+﻿using System;
 using System.Reflection;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace Qoden.Reflection
+namespace Qoden.Util
 {
 	public static partial class Inspection
 	{		

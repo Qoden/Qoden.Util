@@ -1,8 +1,8 @@
-using System;
+﻿using System;
 using System.Reflection;
 #pragma warning disable CS1701 // Assuming assembly reference matches identity
 
-namespace Qoden.Reflection
+namespace Qoden.Util
 {
 	/// <summary>
 	/// Reflection based event object you can use to subscribe/unsubscribe from events unknown at runtime.

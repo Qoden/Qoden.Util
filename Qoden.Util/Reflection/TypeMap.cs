@@ -1,9 +1,9 @@
-using System;
+﻿using System;
 using System.Reflection;
 using System.Collections.Concurrent;
 #pragma warning disable CS1701 // Assuming assembly reference matches identity
 
-namespace Qoden.Reflection
+namespace Qoden.Util
 {
 	public class TypeMap<Methods>
 	{		

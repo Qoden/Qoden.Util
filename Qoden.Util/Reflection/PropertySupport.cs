@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Diagnostics.CodeAnalysis;
 #pragma warning disable CS1701 // Assuming assembly reference matches identity
 
-namespace Qoden.Reflection
+namespace Qoden.Util
 {
 	// from https://github.com/mtebenev/winrt-samples/blob/master/AppCore.Portable/Utils/PropertySupport.cs
 

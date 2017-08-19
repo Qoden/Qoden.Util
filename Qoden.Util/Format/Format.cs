@@ -2,7 +2,7 @@
 using System;
 using Qoden.Reflection;
 
-namespace Qoden.Format
+namespace Qoden.Util
 {
 	public static class QodenFormat
 	{

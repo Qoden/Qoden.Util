@@ -1,5 +1,4 @@
 ﻿using System;
-using Qoden.Validation;
 
 namespace Qoden.Util
 {
@@ -18,8 +17,7 @@ namespace Qoden.Util
 
         public DefaultValue(Func<T> valueFactory)
         {
-            Assert.Argument(valueFactory, nameof(valueFactory)).NotNull();
-            _valueFactory = valueFactory;
+            _valueFactory = valueFactory ?? throw new ArgumentNullException(nameof(valueFactory));
             _value = default(T);
         }
 

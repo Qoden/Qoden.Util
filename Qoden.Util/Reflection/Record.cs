@@ -4,19 +4,13 @@ using System.Linq;
 using System.Collections;
 #pragma warning disable CS1701 // Assuming assembly reference matches identity
 
-namespace Qoden.Reflection
+namespace Qoden.Util
 {
-#if __NET_CORE__
-    public interface ICloneable
-    {
-        object Clone();
-    }
-#endif
     /// <summary>
     /// Expose objects as IDictionary[String, Object] implementations.
     /// Might be useful of you want code which works for Dictionary, Json and Data Objects.
     /// </summary>
-    public struct Record : IDictionary<string, object>, ICloneable
+    public struct Record : IDictionary<string, object>
 	{
 		object data;
 		IKeyValueCoding kvc;
@@ -25,26 +19,6 @@ namespace Qoden.Reflection
 		{			
 			kvc = KeyValueCoding.Impl (data);
 			this.data = data;
-		}
-
-		public Record Clone()
-		{
-			var copy = new Dictionary<string, object> ();
-			foreach (var kv in this) {
-				var value = kv.Value;
-				var cloneable = value as ICloneable;
-				if (cloneable != null) {
-					copy [kv.Key] = cloneable.Clone ();
-				} else {
-					copy [kv.Key] = value;
-				}
-			}
-			return new Record (copy);
-		}
-
-		object ICloneable.Clone()
-		{
-			return Clone ();
 		}
 
 		public object Data { 

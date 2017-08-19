@@ -2,7 +2,6 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Reflection;
-using Qoden.Validation;
 using DeviceInfo = Plugin.DeviceInfo.CrossDeviceInfo;
 
 namespace Qoden.Util
@@ -20,8 +19,8 @@ namespace Qoden.Util
 
         public static T Load<T>(string prefix, string name)
         {
-            Assert.Argument(prefix, nameof(prefix)).NotEmpty();
-            Assert.Argument(name, nameof(name)).NotEmpty();
+            if (string.IsNullOrEmpty(prefix)) throw new ArgumentException(nameof(prefix));
+            if (string.IsNullOrEmpty(name)) throw new ArgumentException(nameof(name));
 
             object plugin;
             if (_plugins.TryGetValue($"{prefix}.{name}", out plugin))

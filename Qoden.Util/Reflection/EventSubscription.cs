@@ -1,6 +1,6 @@
-using System;
+﻿using System;
 
-namespace Qoden.Reflection
+namespace Qoden.Util
 {
 	public class EventSubscription : IDisposable
 	{
