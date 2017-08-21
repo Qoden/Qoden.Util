@@ -1,22 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netstandard1.4</TargetFramework>
-    <PackOnBuild>true</PackOnBuild>
     <PackageId>Qoden.Serilog</PackageId>
     <PackageVersion>1.0.0</PackageVersion>
     <Authors>Qoden Technologies</Authors>
     <Description>Serilog adapter for Microsoft logging infrastructure</Description>
+	<AssemblyName>Qoden.Serilog</AssemblyName>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Serilog" Version="2.4.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="1.1.1" />
-  </ItemGroup>
   <ItemGroup>
     <Folder Include="src\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Qoden.Serilog.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Serilog" Version="2.5.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="1.1.2" />
   </ItemGroup>
 </Project>

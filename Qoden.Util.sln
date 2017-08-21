@@ -1,7 +1,14 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Util", "Util\Util.csproj", "{FAB90619-5628-4852-8E47-8529FE34A1B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qoden.Util", "Util\Qoden.Util.csproj", "{FAB90619-5628-4852-8E47-8529FE34A1B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qoden.Serilog", "Serilog\Qoden.Serilog.csproj", "{942387DA-C4DC-403E-A0C9-B1C6244AEBAD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{3846D61C-11F8-4B09-88B8-4C2369ECA6A1}"
+	ProjectSection(SolutionItems) = preProject
+		paket.dependencies = paket.dependencies
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,5 +20,9 @@ Global
 		{FAB90619-5628-4852-8E47-8529FE34A1B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAB90619-5628-4852-8E47-8529FE34A1B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAB90619-5628-4852-8E47-8529FE34A1B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{942387DA-C4DC-403E-A0C9-B1C6244AEBAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{942387DA-C4DC-403E-A0C9-B1C6244AEBAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{942387DA-C4DC-403E-A0C9-B1C6244AEBAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{942387DA-C4DC-403E-A0C9-B1C6244AEBAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
