@@ -6,7 +6,7 @@
     <PackageId>Qoden.Util</PackageId>
     <Authors>Qoden Technologies</Authors>
     <Description>Small utilities which does not fit into any other Qoden packages</Description>
-	<PackageVersion>1.1.0</PackageVersion>
+	<PackageVersion>1.1.1</PackageVersion>
 	<IncludeSymbols>true</IncludeSymbols>
   </PropertyGroup>
   <ItemGroup>

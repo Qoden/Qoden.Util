@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.ExceptionServices;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Qoden.Util
@@ -17,8 +18,7 @@ namespace Qoden.Util
     public class SingletonOperation<T>
     {
         private Func<Task<T>> operation;
-        private object mutex = new object();
-        private volatile Task<T> task;
+        private TaskCompletionSource<T> taskSource = null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:Qoden.Auth.SingletonOperation`1"/> class.
@@ -33,36 +33,53 @@ namespace Qoden.Util
         /// Start single operation
         /// </summary>
         /// <returns>Async operation result</returns>
-        public Task<T> Start()
+        public async Task<T> Start()
         {
-            if (task == null)
+            var t = Volatile.Read(ref taskSource);
+            if (t != null)
             {
-                lock (mutex)
-                {
-                    if (task == null)
-                    {
-                        task = operation().ContinueWith((t)=>{
-                            task = null;
-                            if (t.Exception != null)
-                                ExceptionDispatchInfo.Capture(t.Exception.InnerException).Throw();
-                            return t.Result;
-                        });
-                    }
-                }
+                return await t.Task;
             }
 
-            return task;
+            var value = Interlocked.CompareExchange(ref taskSource, new TaskCompletionSource<T>(), null);
+
+            if (value == null)
+            {
+                T result = default(T);
+                try
+                {
+                    result = await operation();
+                    taskSource.SetResult(result);
+                }
+                catch (OperationCanceledException e)
+                {
+                    taskSource.SetCanceled();
+                }
+                catch (Exception e)
+                {
+                    taskSource.SetException(e);
+                }
+                finally
+                {
+                    Volatile.Write(ref taskSource, null);
+                }
+                return result;
+            }
+            else
+            {
+                return await taskSource.Task;
+            }
         }
 
         /// <summary>
         /// Gets a value indicating whether this <see cref="T:Qoden.Auth.SingletonOperation`1"/> is started.
         /// </summary>
         /// <value><c>true</c> if started; otherwise, <c>false</c>.</value>
-        public bool Started => task != null;
+        public bool Started => taskSource?.Task != null;
 
         /// <summary>
         /// Gets running task.
         /// </summary>
-        public Task<T> Task => task;
+        public Task<T> Task => taskSource?.Task;
     }
 }
