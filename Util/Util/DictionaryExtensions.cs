@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Qoden.Util
 {
@@ -7,9 +6,7 @@ namespace Qoden.Util
     {
         public static V GetValue<K, V>(this IDictionary<K, V> dict, K key, V defaultValue = default(V))
         {
-            V val = defaultValue;
-            dict.TryGetValue(key, out val);
-            return val;
+            return dict.TryGetValue(key, out var value) ? value : defaultValue;
         }
     }
 }
