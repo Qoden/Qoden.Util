@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System;
+using System.Collections.Generic;
 
 namespace Qoden.Util
 {
@@ -10,11 +11,11 @@ namespace Qoden.Util
 			int _idx;
 		    readonly StringBuilder _result;
 		    readonly StringBuilder _tmp;
-			Record _context;
+		    readonly IDictionary<string, object> _context;
 			readonly string _format;
 			FormatException _error;
 
-			public FormatParser (string format, Record context)
+			public FormatParser (string format, IDictionary<string, object> context)
 			{
 				_context = context;
 				_format = format;
@@ -96,8 +97,7 @@ namespace Qoden.Util
 				if (!Consume ('}'))
 					return;
 
-				object value;
-				if (_context.TryGetValue (_tmp.ToString (), out value)) {
+				if (_context.TryGetValue (_tmp.ToString (), out var value)) {
 					_result.Append (value);
 				}
 			}
@@ -127,6 +127,13 @@ namespace Qoden.Util
 		public static string FormatWithObject (this string format, object obj)
 		{
 			var parser = new FormatParser (format, new Record (obj));
+			parser.Parse (true);
+			return parser.Result;				
+		}
+
+		public static string FormatWithParams (this string format, IDictionary<string, object> @params)
+		{
+			var parser = new FormatParser (format, @params);
 			parser.Parse (true);
 			return parser.Result;				
 		}
